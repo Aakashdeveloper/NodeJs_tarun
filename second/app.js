@@ -12,6 +12,9 @@ app.get("/books",function(req,res){
     res.send("this is books page for my app lkdmkvlmkfm")
 })
 
+app.get("/cars",function(req,res){
+    res.send("this is books page for my app lkdmkvlmkfm")
+})
 app.listen(port,function(err){
     console.log(" server is running on port"+ port)
 })
