@@ -11,18 +11,78 @@ app.set('views', './src/views');
 //Specifiy which template engine use
 app.set('view engine', 'ejs');
 
+var movie =[
+    {
+        name: "Black Panther",
+        language: "ENGLISH",
+        rate: 4.5,
+        type: "Action Adventure Fantasy",
+        imageUrl: "https://image.ibb.co/f0hhZc/bp.jpg"
+    },
+    {
+        name: "Death Wish",
+        language: "ENGLISH",
+        type: "Action Crime Thriller",
+        rate: 3.2,
+        imageUrl: "https://image.ibb.co/gC9PfH/dw.jpg"
+    },
+    {
+        name: "Coco",
+        language: "ENGLISH",
+        type: "Adventure Animation Family",
+        rate: 5,
+        imageUrl: "https://image.ibb.co/dQwWSx/coco.jpg"
+    },
+    {
+        name: "Pari",
+        language: "HINDI",
+        rate: 2.5,
+        type: "Horror Thriller",
+        imageUrl: "https://image.ibb.co/fgmbuc/pari.jpg"
+    },
+    {
+        name: "Pad Man",
+        language: "HINDI",
+        type: "Biography Drama",
+        rate: 4,
+        imageUrl: "https://image.ibb.co/hX087x/pad.jpg"
+    },
+    {
+        name: "Aiyaary",
+        language: "HINDI",
+        type: "Action Drama",
+        rate: 3.5,
+        imageUrl: "https://image.ibb.co/iQxzEc/a.jpg"
+    },
+    {
+        name: "Veerey Ki Wedding",
+        language: "HINDI",
+        type: "Comedy Romance",
+        rate: 2,
+        imageUrl: "https://image.ibb.co/c2Tvnx/vw.jpg"
+    },
+    {
+        name: "Black Friday",
+        language: "ENGLISH",
+        rate: 4.5,
+        type: "Action Adventure Fantasy",
+        imageUrl: "https://image.ibb.co/f0hhZc/bp.jpg"
+    }
+]
+
 app.get("/",function(req,res){
     //res.send("this is home pages")'
-    res.render('index',{title:'HomePage',nav:[
+    res.render('index',{title:'Movies List',nav:[
         {link:'/',Text:'Home'},
-        {link:'/books',Text:'Books'},
+        {link:'/details',Text:'Books'},
         {link:'/cars',Text:'Cars'}
-    ]})
+        ],
+        movies:movie})
 })
 
-app.get("/books",function(req,res){
+app.get("/details",function(req,res){
     //res.send("this is books page for my app lkdmkvlmkfm")
-    res.render('bookList',{title:'BookList',nav:[
+    res.render('MoviesList',{title:'MoviesList',nav:[
         {link:'/',Text:'Home'},
         {link:'/books',Text:'Books'},
         {link:'/cars',Text:'Cars'}
