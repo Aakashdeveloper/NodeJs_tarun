@@ -12,7 +12,7 @@ app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
 var moviesRouter = express.Router();
-var albumRouter = express.Router();
+var AlbumsRouter = express.Router()
 var movie =[
     {
         name: "Black Panther",
@@ -76,8 +76,8 @@ moviesRouter.route('/')
         .get(function(req,res){
             res.render('index',{title:'Movies List',nav:[
                 {link:'/',Text:'Home'},
-                {link:'/movies',Text:'Movies'},
-                {link:'/albums',Text:'Albums'}
+                {link:'/details',Text:'Books'},
+                {link:'/cars',Text:'Cars'}
             ],
             movies:movie})
         })
@@ -86,31 +86,54 @@ moviesRouter.route('/details')
             .get(function(req,res){
                 res.send("movies details")
             })
-
-albumRouter.route('/')
+            
+AlbumsRouter.route('/')
         .get(function(req,res){
-            res.render('index',{title:'Album List',nav:[
+            res.render('index',{title:'Movies List',nav:[
                 {link:'/',Text:'Home'},
                 {link:'/details',Text:'Books'},
-                {link:'/albums',Text:'Albums'}
+                {link:'/cars',Text:'Cars'}
             ],
             movies:movie})
         })   
-albumRouter.route('/details')
+AlbumsRouter.route('/details')
             .get(function(req,res){
-                res.send("albums details")
-            })                
-app.get("/",function(req,res){
+                res.send("movies details")
+            })    
+/*app.get("/",function(req,res){
     //res.send("this is home pages")'
-    res.render('home',{title:'HomePage',nav:[
+    res.render('index',{title:'Movies List',nav:[
         {link:'/',Text:'Home'},
-        {link:'/movies',Text:'Movies'},
-        {link:'/albums',Text:'Albums'}
-        ]})
-})
-app.use('/movies',moviesRouter)
-app.use('/albums',albumRouter)
+        {link:'/details',Text:'Books'},
+        {link:'/cars',Text:'Cars'}
+        ],
+        movies:movie})
+})*/
 
+app.get("/details",function(req,res){
+    //res.send("this is books page for my app lkdmkvlmkfm")
+    res.render('MoviesList',{title:'MoviesList',nav:[
+        {link:'/',Text:'Home'},
+        {link:'/books',Text:'Books'},
+        {link:'/cars',Text:'Cars'}
+    ]})
+})
+
+app.get("/cars",function(req,res){
+    res.send("this is books page for my app lkdmkvlmkfm")
+})
+
+app.get("/details",function(req,res){
+    res.send("this is books page for my app lkdmkvlmkfm")
+})
 app.listen(port,function(err){
     console.log(" server is running on port"+ port)
 })
+
+/*
+function add(a,b){
+    return a+b
+}
+
+npm install -g nodemon
+*/
