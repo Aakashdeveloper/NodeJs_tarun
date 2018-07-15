@@ -3,15 +3,15 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
-		<title>Storystrap Template</title>
+		<title>Movies</title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link href="css/styles.css" rel="stylesheet">
+		<link href="/css/styles.css" rel="stylesheet">
 	</head>
 	<body>
 <header class="navbar navbar-bright navbar-fixed-top" role="banner">
@@ -25,7 +25,7 @@
       </button>
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav">
         <% for(var i=0;i<nav.length;i++){%>
             <li>
                 <a href="<%=nav[i].link%>"><%=nav[i].Text%></a>
@@ -91,26 +91,23 @@
           <!--/stories-->
           <div class="row">    
             <br>
-            <% for(var i=0; i<movies.length; i++){%> 
             <div class="col-md-2 col-sm-3 text-center">
-              <a class="story-title" href="#"><img alt="" src="<%=movies[i].imageUrl%>" style="width:100px;height:100px" class="img-circle"></a>
+              <a class="story-title" href="#"><img alt="" src="<%=movies.imageUrl%>" style="width:100px;height:100px" class="img-circle"></a>
             </div>
             <div class="col-md-10 col-sm-9">
-              <h3><%=movies[i].name%></h3>
+              <h3><%=movies.name%></h3>
               <div class="row">
                 <div class="col-xs-9">
-                  <h4><span class="label label-default"><%=movies[i].language%></span></h4><h4>
-                  <small style="font-family:courier,'new courier';" class="text-muted"><%=movies[i].rate%>
-                    <br/><a href="#" class="text-muted">Read More</a></small>
+                  <h4><span class="label label-default"><%=movies.language%></span></h4><h4>
+                  <small style="font-family:courier,'new courier';" class="text-muted"><%=movies.rate%>
+                    <br/><a href="#" class="text-muted"><%=movies.type%></a></small>
                   </h4></div>
                 <div class="col-xs-3"></div>
               </div>
               <br><br>
             </div>
-            <%}%>
           </div>
           <hr>
-            
           <!--/stories-->
           
           
